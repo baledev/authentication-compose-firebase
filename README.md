@@ -1,0 +1,1 @@
+This is an in progress project built using Jetpack Compose. An Android authentication app with Firebase as backend. 
