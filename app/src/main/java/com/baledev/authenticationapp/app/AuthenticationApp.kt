@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import com.baledev.authenticationapp.navigation.AppRouter
 import com.baledev.authenticationapp.navigation.Screen
 import com.baledev.authenticationapp.screens.LoginScreen
+import com.baledev.authenticationapp.screens.SignUpScreen
 
 @Composable
 fun AuthenticationApp() {
@@ -23,7 +24,7 @@ fun AuthenticationApp() {
                 }
 
                 is Screen.SignUpScreen -> {
-
+                    SignUpScreen()
                 }
 
                 is Screen.HomeScreen -> {
