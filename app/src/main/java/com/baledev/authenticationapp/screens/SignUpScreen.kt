@@ -39,7 +39,6 @@ fun SignUpScreen(signupViewModel: SignupViewModel = viewModel()) {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-
         Surface(
             modifier = Modifier
                 .fillMaxSize()
@@ -115,15 +114,12 @@ fun SignUpScreen(signupViewModel: SignupViewModel = viewModel()) {
                     AppRouter.navigateTo(Screen.LoginScreen)
                 })
             }
-
         }
 
         if(signupViewModel.signUpInProgress.value) {
             CircularProgressIndicator()
         }
     }
-
-
 }
 
 @Preview

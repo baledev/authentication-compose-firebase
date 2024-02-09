@@ -8,8 +8,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.baledev.authenticationapp.navigation.AppRouter
 import com.baledev.authenticationapp.navigation.Screen
+import com.baledev.authenticationapp.screens.HomeScreen
 import com.baledev.authenticationapp.screens.LoginScreen
 import com.baledev.authenticationapp.screens.SignUpScreen
+import com.baledev.authenticationapp.screens.TermsAndConditionsScreen
 
 @Composable
 fun AuthenticationApp() {
@@ -28,11 +30,11 @@ fun AuthenticationApp() {
                 }
 
                 is Screen.HomeScreen -> {
-
+                    HomeScreen()
                 }
 
                 is Screen.TermsAndConditionsScreen -> {
-
+                    TermsAndConditionsScreen()
                 }
             }
         }
