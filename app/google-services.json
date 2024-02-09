@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029709606481",
+    "project_id": "authenticationapp-557bc",
+    "storage_bucket": "authenticationapp-557bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029709606481:android:424d029d3c3ce47a4b9270",
+        "android_client_info": {
+          "package_name": "com.baledev.authenticationapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABY31FuTU1q3M3ItXCBf5lhPkjl1xycH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.baledev.authenticationapp.data.RegistrationUIState
 import com.baledev.authenticationapp.data.rules.Validator
+import com.baledev.authenticationapp.navigation.AppRouter
+import com.baledev.authenticationapp.navigation.Screen
+import com.google.firebase.auth.FirebaseAuth
 
 class SignupViewModel : ViewModel() {
 
@@ -117,23 +120,23 @@ class SignupViewModel : ViewModel() {
 
         signUpInProgress.value = true
 
-//        FirebaseAuth
-//            .getInstance()
-//            .createUserWithEmailAndPassword(email, password)
-//            .addOnCompleteListener {
-//                Log.d(TAG, "Inside_OnCompleteListener")
-//                Log.d(TAG, " isSuccessful = ${it.isSuccessful}")
-//
-//                signUpInProgress.value = false
-//                if (it.isSuccessful) {
-//                    PostOfficeAppRouter.navigateTo(Screen.HomeScreen)
-//                }
-//            }
-//            .addOnFailureListener {
-//                Log.d(TAG, "Inside_OnFailureListener")
-//                Log.d(TAG, "Exception= ${it.message}")
-//                Log.d(TAG, "Exception= ${it.localizedMessage}")
-//            }
+        FirebaseAuth
+            .getInstance()
+            .createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                Log.d(TAG, "Inside_OnCompleteListener")
+                Log.d(TAG, " isSuccessful = ${it.isSuccessful}")
+
+                signUpInProgress.value = false
+                if (it.isSuccessful) {
+                    AppRouter.navigateTo(Screen.HomeScreen)
+                }
+            }
+            .addOnFailureListener {
+                Log.d(TAG, "Inside_OnFailureListener")
+                Log.d(TAG, "Exception= ${it.message}")
+                Log.d(TAG, "Exception= ${it.localizedMessage}")
+            }
     }
 
 

@@ -1,7 +1,12 @@
 package com.baledev.authenticationapp.data.login
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import com.baledev.authenticationapp.data.rules.Validator
+import com.baledev.authenticationapp.navigation.AppRouter
+import com.baledev.authenticationapp.navigation.Screen
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel : ViewModel() {
     private val TAG = LoginViewModel::class.simpleName
@@ -34,10 +39,46 @@ class LoginViewModel : ViewModel() {
     }
 
     private fun validateLoginUIDataWithRules() {
-        TODO("Not yet implemented")
+        val emailResult = Validator.validateEmail(
+            email = loginUIState.value.email
+        )
+
+
+        val passwordResult = Validator.validatePassword(
+            password = loginUIState.value.password
+        )
+
+        loginUIState.value = loginUIState.value.copy(
+            emailError = emailResult.status,
+            passwordError = passwordResult.status
+        )
+
+        allValidationsPassed.value = emailResult.status && passwordResult.status
     }
 
     private fun login() {
-        TODO("Not yet implemented")
+        loginInProgress.value = true
+        val email = loginUIState.value.email
+        val password = loginUIState.value.password
+
+        FirebaseAuth
+            .getInstance()
+            .signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                Log.d(TAG,"Inside_login_success")
+                Log.d(TAG,"${it.isSuccessful}")
+
+                if(it.isSuccessful){
+                    loginInProgress.value = false
+                    AppRouter.navigateTo(Screen.HomeScreen)
+                }
+            }
+            .addOnFailureListener {
+                Log.d(TAG,"Inside_login_failure")
+                Log.d(TAG,"Exception = ${it.localizedMessage}")
+
+                loginInProgress.value = false
+
+            }
     }
 }
