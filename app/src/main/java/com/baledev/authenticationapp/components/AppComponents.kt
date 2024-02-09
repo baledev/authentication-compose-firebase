@@ -127,6 +127,7 @@ fun TextFieldComponent(
             cursorColor = Primary,
             focusedBorderColor = Primary,
             unfocusedBorderColor = BgColor,
+            unfocusedContainerColor = BgColor,
             focusedLabelColor = Primary,
         ),
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
@@ -151,7 +152,6 @@ fun PasswordTextFieldComponent(
     onTextSelected: (String) -> Unit,
     errorStatus: Boolean = false
 ) {
-
     val localFocusManager = LocalFocusManager.current
     val password = remember {
         mutableStateOf("")
@@ -161,7 +161,6 @@ fun PasswordTextFieldComponent(
         mutableStateOf(false)
     }
 
-
     OutlinedTextField(
         modifier = Modifier
             .fillMaxWidth()
@@ -170,7 +169,9 @@ fun PasswordTextFieldComponent(
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = Primary,
             focusedLabelColor = Primary,
-            cursorColor = Primary
+            cursorColor = Primary,
+            unfocusedBorderColor = BgColor,
+            unfocusedContainerColor = BgColor
         ),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Password,
