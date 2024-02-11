@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp
+package com.baledev.authenticationapp.data.remote
 
 import android.app.Application
 import com.google.firebase.FirebaseApp

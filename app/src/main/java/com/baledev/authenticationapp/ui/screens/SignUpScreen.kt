@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.screens
+package com.baledev.authenticationapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -19,16 +19,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.baledev.authenticationapp.R
-import com.baledev.authenticationapp.components.ButtonComponent
-import com.baledev.authenticationapp.components.CheckboxComponent
-import com.baledev.authenticationapp.components.ClickableLoginTextComponent
-import com.baledev.authenticationapp.components.DividerTextComponent
-import com.baledev.authenticationapp.components.HeadingTextComponent
-import com.baledev.authenticationapp.components.NormalTextComponent
-import com.baledev.authenticationapp.components.PasswordTextFieldComponent
-import com.baledev.authenticationapp.components.TextFieldComponent
-import com.baledev.authenticationapp.data.signup.SignupUIEvent
-import com.baledev.authenticationapp.data.signup.SignupViewModel
+import com.baledev.authenticationapp.ui.components.ButtonComponent
+import com.baledev.authenticationapp.ui.components.CheckboxComponent
+import com.baledev.authenticationapp.ui.components.ClickableLoginTextComponent
+import com.baledev.authenticationapp.ui.components.DividerTextComponent
+import com.baledev.authenticationapp.ui.components.HeadingTextComponent
+import com.baledev.authenticationapp.ui.components.NormalTextComponent
+import com.baledev.authenticationapp.ui.components.PasswordTextFieldComponent
+import com.baledev.authenticationapp.ui.components.TextFieldComponent
+import com.baledev.authenticationapp.ui.events.SignupUIEvent
+import com.baledev.authenticationapp.ui.viewmodels.SignupViewModel
 import com.baledev.authenticationapp.navigation.AppRouter
 import com.baledev.authenticationapp.navigation.Screen
 

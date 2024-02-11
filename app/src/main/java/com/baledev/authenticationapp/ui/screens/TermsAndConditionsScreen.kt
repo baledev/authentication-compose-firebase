@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.screens
+package com.baledev.authenticationapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.baledev.authenticationapp.components.HeadingTextComponent
+import com.baledev.authenticationapp.ui.components.HeadingTextComponent
 import com.baledev.authenticationapp.R
 import com.baledev.authenticationapp.navigation.AppRouter
 import com.baledev.authenticationapp.navigation.Screen

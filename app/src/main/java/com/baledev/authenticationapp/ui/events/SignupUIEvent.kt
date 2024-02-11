@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data.signup
+package com.baledev.authenticationapp.ui.events
 
 sealed class SignupUIEvent {
     data class FirstNameChanged(val firstName: String) : SignupUIEvent()

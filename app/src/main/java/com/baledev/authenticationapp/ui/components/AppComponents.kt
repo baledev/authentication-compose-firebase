@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.components
+package com.baledev.authenticationapp.ui.components
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -34,6 +34,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -64,7 +65,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.baledev.authenticationapp.R
-import com.baledev.authenticationapp.data.NavigationItem
+import com.baledev.authenticationapp.navigation.NavigationItem
 import com.baledev.authenticationapp.ui.theme.AccentColor
 import com.baledev.authenticationapp.ui.theme.BgColor
 import com.baledev.authenticationapp.ui.theme.GrayColor
@@ -404,14 +405,20 @@ fun UnderLinedTextComponent(value: String) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppToolbar(
-    toolbarTitle: String, logoutButtonClicked: () -> Unit,
+    toolbarTitle: String,
+    logoutButtonClicked: () -> Unit,
     navigationIconClicked: () -> Unit
 ) {
-
     TopAppBar(
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Primary,
+            titleContentColor = Color.White,
+        ),
         title = {
             Text(
-                text = toolbarTitle, color = WhiteColor
+                text = toolbarTitle,
+                color = WhiteColor,
+                fontWeight = FontWeight.SemiBold
             )
         },
         navigationIcon = {
@@ -424,7 +431,6 @@ fun AppToolbar(
                     tint = WhiteColor
                 )
             }
-
         },
         actions = {
             IconButton(onClick = {
@@ -433,6 +439,7 @@ fun AppToolbar(
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.Logout,
                     contentDescription = stringResource(id = R.string.logout),
+                    tint = WhiteColor
                 )
             }
         }
@@ -452,31 +459,29 @@ fun NavigationDrawerHeader(value: String?) {
             .height(180.dp)
             .padding(32.dp)
     ) {
-
         NavigationDrawerText(
-            title = value?:stringResource(R.string.navigation_header), 28.sp , AccentColor
+            title = value ?: stringResource(R.string.navigation_header),
+            textUnit = 20.sp,
+            color = AccentColor
         )
-
     }
 }
 
 @Composable
-fun NavigationDrawerBody(navigationDrawerItems: List<NavigationItem>,
-                         onNavigationItemClicked:(NavigationItem) -> Unit) {
+fun NavigationDrawerBody(
+    navigationDrawerItems: List<NavigationItem>,
+    onNavigationItemClicked:(NavigationItem) -> Unit
+) {
     LazyColumn(modifier = Modifier.fillMaxWidth()) {
 
         items(navigationDrawerItems) {
-            NavigationItemRow(item = it,onNavigationItemClicked)
+            NavigationItemRow(item = it, onNavigationItemClicked)
         }
-
     }
 }
 
 @Composable
-fun NavigationItemRow(item: NavigationItem,
-                      onNavigationItemClicked:(NavigationItem) -> Unit) {
-
-
+fun NavigationItemRow(item: NavigationItem, onNavigationItemClicked:(NavigationItem) -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -485,7 +490,6 @@ fun NavigationItemRow(item: NavigationItem,
             }
             .padding(all = 16.dp)
     ) {
-
         Icon(
             imageVector = item.icon,
             contentDescription = item.description,
@@ -494,8 +498,6 @@ fun NavigationItemRow(item: NavigationItem,
         Spacer(modifier = Modifier.width(18.dp))
 
         NavigationDrawerText(title = item.title, 18.sp, Primary)
-
-
     }
 }
 

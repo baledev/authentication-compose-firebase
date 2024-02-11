@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp
+package com.baledev.authenticationapp.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

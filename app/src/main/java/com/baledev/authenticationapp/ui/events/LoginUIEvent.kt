@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data.login
+package com.baledev.authenticationapp.ui.events
 
 sealed class LoginUIEvent {
     data class EmailChanged(val email:String): LoginUIEvent()

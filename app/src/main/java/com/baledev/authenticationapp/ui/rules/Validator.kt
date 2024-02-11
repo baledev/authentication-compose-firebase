@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data.rules
+package com.baledev.authenticationapp.ui.rules
 
 object Validator {
     fun validateFirstName(fName: String): ValidationResult {
@@ -26,7 +26,7 @@ object Validator {
         )
     }
 
-    fun validatePrivacyPolicyAcceptance(statusValue:Boolean):ValidationResult{
+    fun validatePrivacyPolicyAcceptance(statusValue:Boolean): ValidationResult {
         return ValidationResult(
             statusValue
         )

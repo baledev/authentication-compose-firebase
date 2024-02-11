@@ -1,9 +1,11 @@
-package com.baledev.authenticationapp.data.login
+package com.baledev.authenticationapp.ui.viewmodels
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.baledev.authenticationapp.data.rules.Validator
+import com.baledev.authenticationapp.ui.events.LoginUIEvent
+import com.baledev.authenticationapp.ui.states.LoginUIState
+import com.baledev.authenticationapp.ui.rules.Validator
 import com.baledev.authenticationapp.navigation.AppRouter
 import com.baledev.authenticationapp.navigation.Screen
 import com.google.firebase.auth.FirebaseAuth

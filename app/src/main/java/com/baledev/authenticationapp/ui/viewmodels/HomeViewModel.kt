@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data.home
+package com.baledev.authenticationapp.ui.viewmodels
 
 import android.util.Log
 import androidx.compose.material.icons.Icons
@@ -7,7 +7,7 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.baledev.authenticationapp.data.NavigationItem
+import com.baledev.authenticationapp.navigation.NavigationItem
 import com.baledev.authenticationapp.navigation.AppRouter
 import com.baledev.authenticationapp.navigation.Screen
 import com.google.firebase.auth.FirebaseAuth
@@ -37,7 +37,7 @@ class HomeViewModel : ViewModel() {
         )
     )
 
-    private val isUserLoggedIn: MutableLiveData<Boolean> = MutableLiveData()
+    val isUserLoggedIn: MutableLiveData<Boolean> = MutableLiveData()
 
     fun logout() {
         val firebaseAuth = FirebaseAuth.getInstance()
@@ -66,7 +66,7 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    private val emailId: MutableLiveData<String> = MutableLiveData()
+    val emailId: MutableLiveData<String> = MutableLiveData()
 
     fun getUserData() {
         FirebaseAuth.getInstance().currentUser?.also {

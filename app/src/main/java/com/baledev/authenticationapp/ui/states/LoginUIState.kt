@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data.login
+package com.baledev.authenticationapp.ui.states
 
 data class LoginUIState (
     var email: String = "",

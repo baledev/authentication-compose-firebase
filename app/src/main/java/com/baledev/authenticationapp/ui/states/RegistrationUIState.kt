@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data
+package com.baledev.authenticationapp.ui.states
 
 data class RegistrationUIState(
     var firstName: String = "",

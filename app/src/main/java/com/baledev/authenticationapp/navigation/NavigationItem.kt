@@ -1,4 +1,4 @@
-package com.baledev.authenticationapp.data
+package com.baledev.authenticationapp.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
